@@ -21,7 +21,7 @@ public class MenuTest {
     private Servicio djYSonido = new Servicio("DJ y sonido", 120_000.0);
 
     private Menu eventoCompleto = new Menu("Evento completo", 20.0);
-    private Servicio brindisDeBienvenida = new Servicio("Brindis de bienvenido", 50_000.0);
+    private Servicio brindisDeBienvenida = new Servicio("Brindis de bienvenida", 50_000.0);
 
     
     @Test 
