@@ -37,6 +37,14 @@ public class Servicio implements Oferta {
 
     }
 
+    public void setPrecio(Double nuevaTarifa) {
+         if(precio < 0.0){
+            throw new PrecioNegativoException("El precio colocado es invalido, debe ser positivo");
+        }
+
+        this.precio = nuevaTarifa;
+    }
+
     
 
 

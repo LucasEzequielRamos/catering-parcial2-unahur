@@ -3,6 +3,7 @@ package ar.edu.unahur.obj2.catering.Ofertas;
 import java.util.ArrayList;
 
 import ar.edu.unahur.obj2.catering.Excepciones.DescuentoInvalidoException;
+import ar.edu.unahur.obj2.catering.Excepciones.PropuestaNoIncluidaException;
 
 /**
  * Menu
@@ -45,6 +46,16 @@ public class Menu implements Oferta {
 
     public void agregarOferta(Oferta oferta) {
         this.ofertas.add(oferta);
+    }
+
+
+    public void quitarOferta(String ofertaNombre) {
+        Oferta oferta = ofertas.stream()
+            .filter(o -> o.descripcion().equals(ofertaNombre))
+            .findFirst()
+            .orElseThrow(() -> new PropuestaNoIncluidaException("La oferta no existe"));
+
+        ofertas.remove(oferta);
     }
 
 

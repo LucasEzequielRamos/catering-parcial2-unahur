@@ -1,0 +1,11 @@
+package ar.edu.unahur.obj2.catering.Excepciones;
+
+/**
+ * PropuestaNoIncluidaException
+ */
+public class PropuestaNoIncluidaException extends RuntimeException {
+
+    public PropuestaNoIncluidaException(String message) {
+        super(message);
+    }
+}
