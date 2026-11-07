@@ -26,6 +26,19 @@ public class AdicionalTest {
     private Servicio brindisDeBienvenida = new Servicio("Brindis de bienvenida", 50_000.0);
 
     @Test 
+    public void dadoUnServicioMesaDeEntradas_alAplicarCadaExtra_elPrecioEsElEsperado(){
+
+        Adicional mesaDeEntradaConMozos = new MozosAdicionales(mesaDeEntradas);
+        Adicional mesaDeEntradaConServicioNocturno = new ServicioNocturno(mesaDeEntradas);
+        Adicional mesaDeEntradaConVajillaPremium = new VajillaPremium(mesaDeEntradas);
+
+        assertEquals(98_000.0, mesaDeEntradaConMozos.precio());
+        assertEquals(96_000.0, mesaDeEntradaConServicioNocturno.precio());
+        assertEquals(92_000.0, mesaDeEntradaConVajillaPremium.precio());
+
+    }
+
+    @Test 
     public void dadoUnMenuParrilleroConExtras_alConsultarDatos_sonLosEsperados(){
 
         menuParrillero.agregarOferta(mesaDeEntradas);
